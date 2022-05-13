@@ -1,0 +1,265 @@
+/**/ /**/ /**/ /**/ /**/ /**/ /**/ /**/ /**/
+/**/ /**/ /**/ /* Layout */ /**/ /**/ /**/
+/**/ /**/ /**/ /**/ /**/ /**/ /**/ /**/ /**/
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 11.25%) [col-end])
+    [center-end] minmax(6rem, 1fr) [full-end];
+  grid-template-rows: 40vh repeat(4, min-content) min-content min-content;
+}
+
+/**/ /**/ /**/ /**/ /**/ /**/ /**/ /**/ /**/
+/**/ /**/ /**/ /* Header */ /**/ /**/
+/**/ /**/ /**/ /**/ /**/ /**/ /**/ /**/ /**/
+header {
+  height: 45vh;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.781) 0%,
+      rgba(0, 0, 0, 0.681) 80%,
+      rgba(0, 0, 0, 0.508) 100%
+    ),
+    url(../img/3.jpeg);
+  background-size: cover;
+  background-position: center;
+  grid-column: full-start / full-end;
+  /* grid-row: 1 / 2; */
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr) [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 11.25%) [col-end]
+    )
+    [center-end]
+    minmax(6rem, 1fr) [full-end];
+  grid-template-rows: 30% 17% 40%;
+  z-index: 100;
+  /* animation: animate 50s ease-in infinite; */
+}
+
+.drag-down {
+  top: 5.4rem;
+}
+
+.hero-text {
+  grid-column: col-start 1 / col-end 3;
+  /* grid-row: /; */
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+}
+
+.nav__list li {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+  gap: 0.5rem;
+}
+
+/**/ /**/ /**/ /**/ /**/ /**/ /**/ /**/ /**/
+/**/ /**/ /**/ /* Sections */ /**/ /**/ /**/
+/**/ /**/ /**/ /**/ /**/ /**/ /**/ /**/ /**/
+/* Contact Us */
+.contact-us {
+  grid-column: col-start 1 / col-end 8;
+  padding: 10rem 4rem;
+  /* margin-top: 10rem; */
+  display: flex;
+  background-color: #f0eeee;
+  align-items: center;
+}
+
+.contact-text,
+.contact-form {
+  flex-basis: 100%;
+}
+
+.contact-text p {
+  margin-bottom: 4rem;
+  width: 60%;
+  font-size: 1.4rem;
+}
+
+.contact-list {
+  list-style: none;
+}
+
+.contact-list li:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.contact-list li:last-child {
+  width: 70%;
+}
+
+.contact-form {
+  width: 100%;
+  background-color: #faf9f9;
+  border-radius: 1rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.105);
+}
+
+.contact-form > * {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.contact-form input[type="date"] {
+  font-family: inherit;
+  color: inherit;
+}
+
+.contact-form input,
+.text-area textarea {
+  padding: 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  transition: all 0.2s;
+}
+
+.contact-form input::placeholder,
+.text-area textarea::placeholder {
+  font-family: var(--font-display);
+}
+
+.contact-form input:focus,
+.text-area textarea:focus {
+  outline: none;
+  /* border-color: var(--color-primary); */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.04);
+}
+
+.text-area textarea {
+  width: 100%;
+}
+
+.contact-form span {
+  display: block;
+  padding-left: 1.5rem;
+  font-size: 1.2rem;
+  color: var(--color-grey-dark-1);
+  transition: all 0.3s;
+}
+
+.contact-form input:placeholder-shown + span {
+  opacity: 0;
+  transform: translateY(-1.5rem);
+}
+
+.form-name,
+.phone-date {
+  display: flex;
+  gap: 2rem;
+}
+
+.name,
+.tel-date {
+  flex-basis: 100%;
+}
+
+.name input,
+.tel-date input {
+  width: 100%;
+}
+
+.email input,
+.subject input {
+  width: 100%;
+}
+
+/* About Us */
+
+.company {
+  grid-column: col-start 1 / col-end 8;
+  padding: 10rem 0 0;
+}
+
+.flex-p {
+  display: flex;
+  gap: 2rem;
+}
+
+.ceo {
+  background-color: #f0eeee;
+}
+
+.ceo b,
+.ceo cite {
+  display: block;
+  text-align: center;
+}
+
+.section-1,
+.section-2 {
+  grid-column: col-start 1 / col-end 8;
+  display: flex;
+  align-items: center;
+  gap: 9rem;
+}
+
+.section-1 {
+  padding: 10rem 0;
+}
+
+.section-2 {
+  padding-bottom: 10rem;
+}
+
+.section-text {
+  flex: 1;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-family: var(--font-primary);
+  color: var(--color-primary-dark);
+  display: flex;
+  align-items: center;
+}
+
+.heading::before {
+  content: "";
+  display: block;
+  background-color: var(--color-secondary);
+  width: 3px;
+  height: 50px;
+  margin-right: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.paragraph {
+  margin-bottom: 1.5rem;
+}
+
+.section-img {
+  height: 60vh;
+  position: relative;
+  flex-basis: 40%;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.circle-1 {
+  bottom: -4.5rem;
+  right: -4.5rem;
+}
+
+.circle-2 {
+  bottom: -4.5rem;
+  left: -4.5rem;
+}
